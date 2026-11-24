@@ -7,7 +7,7 @@
 **A priority-first to-do app that tells you what to do next.**
 Works on phone, tablet and laptop, installs like a normal app, and runs fully offline.
 
-**[▶ Open the app](https://om-sharma31.github.io/donext/)**
+**[▶ Open the app](https://tomatoo0-90.github.io/donext/)**
 
 </div>
 
@@ -145,7 +145,7 @@ When tested on made-up data with known patterns, the model found them (#college 
 
 ## Install it on your device
 
-Open **https://om-sharma31.github.io/donext/**, then:
+Open **https://tomatoo0-90.github.io/donext/**, then:
 
 | Device | How to install |
 |---|---|
@@ -190,7 +190,7 @@ Tasks are saved **in the browser on each device** (localStorage), so there's no 
 You don't need to install or build anything, because it's plain HTML, CSS and JavaScript.
 
 ```bash
-git clone https://github.com/Om-sharma31/donext.git
+git clone https://github.com/Tomatoo0-90/donext.git
 cd donext
 python -m http.server 8000
 ```
@@ -230,7 +230,7 @@ Vanilla JavaScript (no frameworks, no build step), CSS custom properties for the
 
 ## Author
 
-**Anish Verma** · [@Om-sharma31](https://github.com/Om-sharma31)
+**Anish Verma** · [@Tomatoo0-90](https://github.com/Tomatoo0-90)
 B.Tech Data Science, Rungta University
 
 ## License
