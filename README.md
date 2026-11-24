@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="icons/icon-192.png" width="88" alt="DoNext logo">
+<img src="icons/icon-192.png" width="88" alt="WhatNXT logo">
 
-# DoNext
+# WhatNXT
 
 **A priority-first to-do app that tells you what to do next.**
 Works on phone, tablet and laptop, installs like a normal app, and runs fully offline.
@@ -12,16 +12,16 @@ Works on phone, tablet and laptop, installs like a normal app, and runs fully of
 </div>
 
 <p align="center">
-  <img src="screenshots/desktop-light.png" width="72%" alt="DoNext on a laptop">
+  <img src="screenshots/desktop-light.png" width="72%" alt="WhatNXT on a laptop">
   &nbsp;
-  <img src="screenshots/phone-dark.png" width="22%" alt="DoNext on a phone in dark mode">
+  <img src="screenshots/phone-dark.png" width="22%" alt="WhatNXT on a phone in dark mode">
 </p>
 
 ---
 
 ## Features
 
-- **"Do this next" card**: DoNext ranks every open task by priority and due date and shows the one to do now, with a **▶ Start focus** button.
+- **"Do this next" card**: WhatNXT ranks every open task by priority and due date and shows the one to do now, with a **▶ Start focus** button.
 - **🎮 XP, ranks and badges**: earn XP for finishing tasks, lose it for missed deadlines, and climb from Rookie to God of Productivity.
 - **🤖 On-device AI**: predicts how long each task will really take you, and the % chance you'll finish in the time you chose.
 - **Plan my day**: builds a timeline of your free time, learns how long your tasks really take, and warns you when you've planned too much.
@@ -37,9 +37,9 @@ Works on phone, tablet and laptop, installs like a normal app, and runs fully of
 - **Private**: no account and no server. Your tasks never leave your device.
 - **Backup and restore** to a `.json` file, which is also how you move tasks between devices.
 
-## What makes DoNext different 🧠
+## What makes WhatNXT different 🧠
 
-Most to-do apps just store a list. DoNext **plans your day for you and learns how long your tasks really take.**
+Most to-do apps just store a list. WhatNXT **plans your day for you and learns how long your tasks really take.**
 
 <p align="center">
   <img src="screenshots/plan.png" width="62%" alt="Plan my day timeline with an overload warning">
@@ -48,17 +48,17 @@ Most to-do apps just store a list. DoNext **plans your day for you and learns ho
 </p>
 
 ### 1. Plan my day
-Tell DoNext when you're free, for example *"I'm free from 6 PM until 11 PM"*. It builds a **timeline** for that window:
+Tell WhatNXT when you're free, for example *"I'm free from 6 PM until 11 PM"*. It builds a **timeline** for that window:
 - Tasks with a set time are pinned to that time 📌
 - Overdue and due-today tasks are fitted in first, most important first
 - Any time left over is used to **get ahead** on upcoming tasks
 - Short breaks go between tasks if you want them
 
 ### 2. Reality check
-If you have more due work than free time, DoNext tells you, e.g. *"⚠️ 1h 40m won't fit"*. It lists the tasks that won't fit and gives you a **"Move them to tomorrow"** button.
+If you have more due work than free time, WhatNXT tells you, e.g. *"⚠️ 1h 40m won't fit"*. It lists the tasks that won't fit and gives you a **"Move them to tomorrow"** button.
 
 ### 3. It learns how long things take *you*
-Give a task a time estimate (`~45m` in quick add, or "How long will it take?" in the editor) and press **▶ Focus** to start a timer. When you finish, DoNext compares your estimate with the real time. After 3 tasks it knows your personal **speed factor**, e.g. *"tasks take you 1.4× your estimate"*, and builds future plans with that extra time.
+Give a task a time estimate (`~45m` in quick add, or "How long will it take?" in the editor) and press **▶ Focus** to start a timer. When you finish, WhatNXT compares your estimate with the real time. After 3 tasks it knows your personal **speed factor**, e.g. *"tasks take you 1.4× your estimate"*, and builds future plans with that extra time.
 
 ### 4. Focus timer
 A full-screen timer with a progress ring. It uses your estimate, or a 25-minute Pomodoro if you didn't set one. It also:
@@ -101,7 +101,7 @@ Tap your rank in the top bar to see your progress, badges and XP history. Undoin
 
 ## 🤖 How the AI works
 
-DoNext includes a small **machine-learning model that runs entirely on your device**. It learns how long tasks *really* take **you**, and predicts whether you can finish a task in the time you chose.
+WhatNXT includes a small **machine-learning model that runs entirely on your device**. It learns how long tasks *really* take **you**, and predicts whether you can finish a task in the time you chose.
 
 <p align="center"><img src="screenshots/ai-prediction.png" width="70%" alt="AI prediction while setting a time estimate"></p>
 
@@ -151,7 +151,7 @@ Open **https://tomatoo0-90.github.io/donext/**, then:
 |---|---|
 | **Android** (Chrome) | Tap **⋮** → **Add to Home screen** / **Install app** |
 | **iPhone / iPad** (Safari) | Tap **Share** → **Add to Home Screen** |
-| **Windows / Mac / Linux** (Chrome or Edge) | Click the **install icon** in the address bar, or **⋯** menu → **Install DoNext** |
+| **Windows / Mac / Linux** (Chrome or Edge) | Click the **install icon** in the address bar, or **⋯** menu → **Install WhatNXT** |
 
 After that it opens in its own window like any other app and works without internet.
 

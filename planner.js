@@ -1,12 +1,12 @@
 /* =========================================================
-   DoNext — Plan my day, Focus timer & Insights
+   WhatNXT — Plan my day, Focus timer & Insights
    ---------------------------------------------------------
    1. FOCUS TIMER: start a timer on any task. The time you
       really spend is recorded.
    2. LEARNING: when you finish a task that had an estimate,
-      DoNext compares "estimated" vs "actually took" and learns
+      WhatNXT compares "estimated" vs "actually took" and learns
       your personal speed factor (e.g. "you take 1.4× longer").
-   3. PLAN MY DAY: tell DoNext when you are free; it fills that
+   3. PLAN MY DAY: tell WhatNXT when you are free; it fills that
       time with your most important tasks, using the learned
       factor, and warns you when you have planned too much.
    4. INSIGHTS: focus time per day, streak, best focus hour.
@@ -195,7 +195,7 @@ function renderPlan() {
   ));
 
   if (!openTasks().length) {
-    out.push(emptyState('🗓️', 'Nothing to plan', 'Add some tasks, ideally with a time estimate like "~45m", and DoNext will build your day.'));
+    out.push(emptyState('🗓️', 'Nothing to plan', 'Add some tasks, ideally with a time estimate like "~45m", and WhatNXT will build your day.'));
     out.push(renderInsights(), renderAiInsights());
     return out;
   }
@@ -213,18 +213,18 @@ function renderPlan() {
     p.overflow.length ? statTile("Won't fit", fmtDur(p.overflowMin), 'bad') : statTile('Spare', fmtDur(Math.max(0, spare)), 'good'),
   ));
 
-  // What DoNext has learned about you
+  // What WhatNXT has learned about you
   const sf = speedFactor();
   let note;
   if (sf.learned && Math.abs(sf.factor - 1) >= 0.1) {
     note = el('p', { class: 'learn-note' }, 'From your last ', el('strong', { text: plural2(sf.n, 'task') }),
       sf.factor > 1 ? ', tasks take you ' : ', you finish tasks in ',
       el('strong', { text: `${sf.factor.toFixed(1)}× your estimate` }),
-      '. DoNext adjusts the plan for it automatically.');
+      '. WhatNXT adjusts the plan for it automatically.');
   } else if (sf.learned) {
     note = el('p', { class: 'learn-note' }, el('strong', { text: 'Your estimates are spot on.' }), ` Learned from ${plural2(sf.n, 'task')}.`);
   } else {
-    note = el('p', { class: 'learn-note', text: `Tip: give tasks a time estimate and use ▶ Focus. For now the plan adds 25% (most people underestimate). After ${3 - sf.n} more finished ${3 - sf.n === 1 ? 'task' : 'tasks'}, DoNext's AI learns your real pace.` });
+    note = el('p', { class: 'learn-note', text: `Tip: give tasks a time estimate and use ▶ Focus. For now the plan adds 25% (most people underestimate). After ${3 - sf.n} more finished ${3 - sf.n === 1 ? 'task' : 'tasks'}, WhatNXT's AI learns your real pace.` });
   }
   out.push(note);
 
@@ -254,7 +254,7 @@ function renderPlan() {
       b.parts > 1 ? el('span', { class: 'chip', text: `Part ${b.part} of ${b.parts}` }) : null,
       isOverdue(t) ? el('span', { class: 'chip overdue', text: 'Overdue' }) : null,
       b.optional ? el('span', { class: 'chip', text: t.due ? `Getting ahead · ${dueLabel(t)}` : 'Getting ahead' }) : null,
-      b.guessed ? el('span', { class: 'chip', title: 'No estimate set, so DoNext guessed 30 minutes', text: '≈ guessed time' }) : null,
+      b.guessed ? el('span', { class: 'chip', title: 'No estimate set, so WhatNXT guessed 30 minutes', text: '≈ guessed time' }) : null,
       t.tag ? el('span', { class: 'chip', text: '#' + t.tag }) : null,
     );
     const showMain = !focusShown && !isPast;
@@ -430,7 +430,7 @@ function tick() {
     clearInterval(tickTimer);
     focusEl.hidden = true;
     pill.hidden = true;
-    document.title = `${VIEWS[state.view]} · DoNext`;
+    document.title = `${VIEWS[state.view]} · WhatNXT`;
     releaseWakeLock();
     return;
   }
@@ -447,7 +447,7 @@ function tick() {
   focusEl.classList.toggle('paused', Boolean(st.pausedAt));
   $('#focusPause').textContent = st.pausedAt ? 'Resume' : 'Pause';
   $('#focusSub').textContent = over
-    ? (st.estimated ? "Taking longer than planned. That's fine, DoNext learns from it." : 'Pomodoro done. Take a short break or keep going.')
+    ? (st.estimated ? "Taking longer than planned. That's fine, WhatNXT learns from it." : 'Pomodoro done. Take a short break or keep going.')
     : (st.estimated ? `Target: ${fmtDur(st.duration)} · ${PRIORITIES[t.priority].label} priority` : `25-minute Pomodoro · ${PRIORITIES[t.priority].label} priority`);
   const label = `${st.pausedAt ? '⏸ ' : over ? '⏰ +' : ''}${mmss(left)}`;
   $('#focusPillText').textContent = `${label} · ${t.title}`;
@@ -465,8 +465,8 @@ function timeUp(t) {
   if (document.hidden && 'Notification' in window && Notification.permission === 'granted') {
     const body = `Time's up for "${t.title}". Mark it done or keep going.`;
     navigator.serviceWorker && navigator.serviceWorker.getRegistration().then((reg) => {
-      if (reg) reg.showNotification('DoNext · Focus', { body, tag: 'donext-focus', icon: 'icons/icon-192.png' });
-      else new Notification('DoNext · Focus', { body }); // eslint-disable-line no-new
+      if (reg) reg.showNotification('WhatNXT · Focus', { body, tag: 'donext-focus', icon: 'icons/icon-192.png' });
+      else new Notification('WhatNXT · Focus', { body }); // eslint-disable-line no-new
     }).catch(() => {});
   }
 }

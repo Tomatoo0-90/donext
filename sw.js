@@ -1,6 +1,6 @@
-/* DoNext service worker — makes the app work offline.
+/* WhatNXT service worker — makes the app work offline.
    Bump CACHE_VERSION whenever you change any app file so users get the update. */
-const CACHE_VERSION = 'donext-v5';
+const CACHE_VERSION = 'donext-v6';
 const APP_FILES = [
   './',
   './index.html',

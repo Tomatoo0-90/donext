@@ -1,5 +1,5 @@
 /* =========================================================
-   DoNext AI: learns how long tasks REALLY take you
+   WhatNXT AI: learns how long tasks REALLY take you
    ---------------------------------------------------------
    A small machine-learning model that runs on your device.
 
@@ -200,7 +200,7 @@ function predictChip(t) {
   const minsLeft = dl ? (dl - Date.now()) / 60000 : Infinity;
   let pct;
   let text;
-  let tip = `DoNext's AI predicts about ${fmtDur(pr.median)} (likely ${fmtDur(pr.low)}–${fmtDur(pr.high)}).`;
+  let tip = `WhatNXT's AI predicts about ${fmtDur(pr.median)} (likely ${fmtDur(pr.low)}–${fmtDur(pr.high)}).`;
   if (dl && minsLeft > 0 && minsLeft < 24 * 60 && t.time) {
     // How likely to make the deadline if you start now
     pct = Math.round(pr.pWithin(minsLeft + (t.spent || 0)) * 100);
@@ -231,7 +231,7 @@ function updateAiHint() {
   });
   hint.className = 'ai-hint';
   if (!est) {
-    hint.textContent = "🤖 Pick how long you think it'll take, and DoNext's AI will predict whether you can really do it in that time.";
+    hint.textContent = "🤖 Pick how long you think it'll take, and WhatNXT's AI will predict whether you can really do it in that time.";
     return;
   }
   if (!pr.trained) {
@@ -357,7 +357,7 @@ function renderAiInsights() {
     box.append(
       el('p', { class: 'ai-line', text: `The AI is learning your pace: ${m.n}/${AI.MIN_SAMPLES} finished tasks with a measured time.` }),
       bar,
-      el('p', { class: 'learn-note', text: 'Give tasks a time estimate, then use ▶ Focus (or answer "how long did it take?" when you finish). After 3, DoNext predicts your real time for every task and the chance you finish in the time you chose.' }),
+      el('p', { class: 'learn-note', text: 'Give tasks a time estimate, then use ▶ Focus (or answer "how long did it take?" when you finish). After 3, WhatNXT predicts your real time for every task and the chance you finish in the time you chose.' }),
     );
     return box;
   }
@@ -373,7 +373,7 @@ function renderAiInsights() {
   }
   const pats = patterns(m);
   if (pats.length) box.append(el('ul', { class: 'ai-patterns' }, pats.map((p) => el('li', { text: p }))));
-  else box.append(el('p', { class: 'learn-note', text: 'No strong patterns yet. Keep timing tasks and DoNext will spot what slows you down.' }));
+  else box.append(el('p', { class: 'learn-note', text: 'No strong patterns yet. Keep timing tasks and WhatNXT will spot what slows you down.' }));
   box.append(el('p', { class: 'ai-foot', text: `Model: Bayesian ridge regression · ${m.n} examples · ${m.names.length} features · trained on this device, nothing leaves it.` }));
   return box;
 }

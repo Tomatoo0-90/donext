@@ -1,5 +1,5 @@
 /* =========================================================
-   DoNext — a priority-first to-do app
+   WhatNXT — a priority-first to-do app
    Plain JavaScript, no frameworks. Data is stored in the
    browser (localStorage) on each device.
    ========================================================= */
@@ -462,9 +462,9 @@ function renderToday() {
   if (!open.length) {
     out.push(state.search
       ? emptyState('🔍', 'No matches', `Nothing open matches “${state.search}”.`)
-      : emptyState('🌤️', tasks.length ? 'All clear!' : 'Welcome to DoNext',
+      : emptyState('🌤️', tasks.length ? 'All clear!' : 'Welcome to WhatNXT',
         tasks.length ? 'You have no open tasks. Enjoy it, or add something new.'
-          : 'Add your first task above. Give it a priority and a due date, and DoNext will tell you what to do next.'));
+          : 'Add your first task above. Give it a priority and a due date, and WhatNXT will tell you what to do next.'));
   } else if (!dueNow.length && !state.search) {
     const others = open.length - (next ? 1 : 0);
     out.push(emptyState('✅', 'Nothing else due today',
@@ -562,7 +562,7 @@ function updateHeader() {
   else if (state.view === 'matrix') sub = 'Sort your tasks by importance and urgency';
   else if (state.view === 'done') sub = `${tasks.length - open.length} completed`;
   $('#viewSub').textContent = sub;
-  document.title = `${VIEWS[state.view]} · DoNext`;
+  document.title = `${VIEWS[state.view]} · WhatNXT`;
 
   const counts = {
     today: open.filter((t) => t.due && dayDiff(t.due) <= 0).length,
@@ -724,10 +724,10 @@ function applyTheme() {
 function exportBackup() {
   const extras = {};
   for (const k of EXTRA_KEYS) extras[k] = readJSON(k, null);
-  const payload = { app: 'DoNext', version: 2, exportedAt: new Date().toISOString(), tasks, extras };
+  const payload = { app: 'WhatNXT', version: 2, exportedAt: new Date().toISOString(), tasks, extras };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
-  const a = el('a', { href: url, download: `donext-backup-${dateStr()}.json` });
+  const a = el('a', { href: url, download: `whatnxt-backup-${dateStr()}.json` });
   document.body.append(a);
   a.click();
   a.remove();
@@ -765,7 +765,7 @@ async function importBackup(file) {
     render();
     showToast(`Imported: ${added} new, ${updated} updated`, true);
   } catch {
-    showToast('That file is not a DoNext backup');
+    showToast('That file is not a WhatNXT backup');
   }
 }
 
@@ -814,7 +814,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 window.addEventListener('appinstalled', () => {
   $('#installItem').hidden = true;
-  showToast('DoNext installed 🎉');
+  showToast('WhatNXT installed 🎉');
 });
 
 /* ---------- Wiring ---------- */
@@ -936,7 +936,7 @@ function checkDesktopMode() {
   const apple = /Macintosh/.test(ua);
   $('#desktopModeHow').textContent = apple
     ? 'In Safari tap the “aA” button in the address bar → “Request Mobile Website”.'
-    : 'In Chrome tap ⋮ (top right) and untick “Desktop site”. If DoNext is installed as an app: open Chrome → Settings → Site settings → Desktop site → turn it off, then reopen DoNext.';
+    : 'In Chrome tap ⋮ (top right) and untick “Desktop site”. If WhatNXT is installed as an app: open Chrome → Settings → Site settings → Desktop site → turn it off, then reopen WhatNXT.';
   // Scale the message up so it is readable on the zoomed-out page
   const scale = Math.max(1, window.innerWidth / Math.min(screen.width, screen.height));
   tip.style.fontSize = Math.round(15 * scale) + 'px';

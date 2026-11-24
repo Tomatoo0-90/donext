@@ -1,5 +1,5 @@
 /* =========================================================
-   DoNext Game: XP points, ranks and badges
+   WhatNXT Game: XP points, ranks and badges
    ---------------------------------------------------------
    + XP for finishing tasks (more for high priority)
    + bonus for beating the deadline and your own estimate
